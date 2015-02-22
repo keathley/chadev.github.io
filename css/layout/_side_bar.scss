@@ -1,0 +1,43 @@
+.side-bar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: $side-bar-width;
+
+  .logo {
+    border-bottom: 3px solid #838383;
+    padding: 26px 0px 3px 0px;
+  }
+
+  .by-line {
+    font-size: 14px;
+    font-style: bold;
+    padding-top: 100px;
+    display: block;
+    // border-bottom: 3px solid black;
+  }
+
+  .container {
+    padding: 41px 18px;
+
+    .nav-collapse {
+      padding-top: 170px;
+      padding-left: 26px;
+      font-size: 14px;
+      list-style: none;
+      text-align: left;
+
+      li {
+        width: 100%;
+        padding: 3px 0;
+      }
+
+      a {
+      }
+    }
+  }
+}
+
+.main-content {
+  padding-left: $side-bar-width;
+}

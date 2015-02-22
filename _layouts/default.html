@@ -2,26 +2,44 @@
 <html lang="en" class="no-js">
   {% include head.html %}
   <body>
-    {% include header.html %}
+    <div class="site-container">
+      <nav class="side-bar">
+        <div class="container">
+          <a class="logo" href="/">
+            <img src="/assets/images/logo.svg" alt="Chadev Logo">
+          </a>
+          <span class="by-line">
+            A community for developers by developers
+          </span>
+          <ul class="nav-collapse" role="navigation">
+            {% for link in site.links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
+      <div class="main-content">
 
-    {% if page.featured-image %}
-      <div class="featured">
-      <picture>
-        <!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source srcset="/assets/images/{{ page.featured-image.large-image }}" media="(min-width: 1200px)">
-        <source srcset="/assets/images/{{ page.featured-image.medium-image }}" media="(min-width: 47em)">
-        <!--[if IE 9]></video><![endif]-->
-        <img srcset="/assets/images/{{ page.featured-image.small-image }}" alt="{{ page.featured-image.alt-text }}">
-      </picture>
-    </div>
-    {% endif %}
+        {% if page.featured-image %}
+          <div class="featured">
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="/assets/images/{{ page.featured-image.large-image }}" media="(min-width: 1200px)">
+            <source srcset="/assets/images/{{ page.featured-image.medium-image }}" media="(min-width: 47em)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="/assets/images/{{ page.featured-image.small-image }}" alt="{{ page.featured-image.alt-text }}">
+          </picture>
+        </div>
+        {% endif %}
 
-    <main role="main">
-      <div class="container">
-        {{ content }}
+        <main role="main">
+          <div class="container">
+            {{ content }}
+          </div>
+        </main>
       </div>
-    </main>
-
-    {% include footer.html %}
+    </div>
   </body>
 </html>
