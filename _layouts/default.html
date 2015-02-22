@@ -8,10 +8,10 @@
           <a class="logo" href="/">
             <img src="/assets/images/logo.svg" alt="Chadev Logo">
           </a>
-          <span class="by-line">
+<!--           <span class="by-line">
             A community for developers by developers
           </span>
-          <ul class="nav-collapse" role="navigation">
+ -->          <ul class="nav-collapse" role="navigation">
             {% for link in site.links %}
             <li>
               <a href="{{ link.url }}">{{ link.title }}</a>
@@ -21,9 +21,8 @@
         </div>
       </nav>
       <div class="main-content">
-
         {% if page.featured-image %}
-          <div class="featured">
+        <div class="featured">
           <picture>
             <!--[if IE 9]><video style="display: none;"><![endif]-->
             <source srcset="/assets/images/{{ page.featured-image.large-image }}" media="(min-width: 1200px)">
@@ -33,12 +32,33 @@
           </picture>
         </div>
         {% endif %}
-
-        <main role="main">
-          <div class="container">
-            {{ content }}
+        <section>
+          <h1>A community for developers by developers</h1>
+        </section>
+        <section class="devs">
+        {% assign sorted_devs = site.devs | sort:"name" %}
+        {% for page in sorted_devs %}
+          <div class="dev-profile">
+            <a class="avatar" href="http://github.com/{{ page.github }}">
+              <img src="{% include gravatar/image.html size=site.gravatar_sizes.devs id=page.gravatar-id %}" class="profile-gravatar">
+              <h2>{{ page.name }}</h2>
+            </a>
           </div>
-        </main>
+
+        {% endfor %}
+        </section>
+        <section>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores deserunt obcaecati aperiam, tenetur nostrum fugit voluptates illum fuga, doloribus nesciunt saepe quaerat porro! Obcaecati aliquam odio distinctio tenetur eum dolorum.
+        </section>
+        <section>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur similique repellendus dolore magnam quisquam nemo eaque harum sed vero, eius, in reprehenderit dolorum! Qui culpa, voluptas non corporis odit rem.
+        </section>
+         <section>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores deserunt obcaecati aperiam, tenetur nostrum fugit voluptates illum fuga, doloribus nesciunt saepe quaerat porro! Obcaecati aliquam odio distinctio tenetur eum dolorum.
+        </section>
+        <section>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur similique repellendus dolore magnam quisquam nemo eaque harum sed vero, eius, in reprehenderit dolorum! Qui culpa, voluptas non corporis odit rem.
+        </section>
       </div>
     </div>
   </body>

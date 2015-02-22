@@ -3,9 +3,10 @@
   top: 0;
   bottom: 0;
   width: $side-bar-width;
+  background: #f7f7f7;
 
   .logo {
-    border-bottom: 3px solid #838383;
+    // border-bottom: 3px solid #838383;
     padding: 26px 0px 3px 0px;
   }
 
@@ -21,15 +22,16 @@
     padding: 41px 18px;
 
     .nav-collapse {
-      padding-top: 170px;
+      padding-top: 46px;
       padding-left: 26px;
-      font-size: 14px;
+      font-size: 20px;
+      font-weight: bold;
       list-style: none;
       text-align: left;
 
       li {
         width: 100%;
-        padding: 3px 0;
+        padding: 8px 0;
       }
 
       a {
@@ -40,4 +42,9 @@
 
 .main-content {
   padding-left: $side-bar-width;
+
+  section {
+    padding: 40px 20px;
+  }
 }
+

@@ -1,19 +1,14 @@
+.devs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .dev-profile {
-  @include span-columns(6);
-  @include omega(2n);
-  line-height: .75;
-  margin-bottom: 5%;
+  width: 200px;
+  height: 200px;
 
-  @include media($small) {
-    @include omega-reset(2n); // Reset previous @include omega()
-    @include span-columns(4);
-    @include omega(3n);
-  }
-
-  @include media($medium) {
-    @include omega-reset(1n); // Reset previous @include omega()
-    @include span-columns(3);
-    @include omega(4n);
+  .avatar {
+    position: relative;
   }
 
   .avatar img {
@@ -28,21 +23,23 @@
     filter: grayscale(1);
   }
 
-  .avatar h2 {
-    font-size: 1.35em;
-    font-weight: 300;
-    line-height: 1.2;
-    color: $dark-grey;
-    padding: .4em 0;
-    border-left: 2px solid $light-grey;
-    border-right: 2px solid $light-grey;
-    border-bottom: 2px solid $light-grey;
-    text-align: center;
-    @include transition (color .2s ease-in-out);
+  .avatar:hover h2 {
+    height: 40px;
   }
 
-  .avatar:hover h2 {
-    color: $blue;
+  .avatar h2 {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 2.2;
+    color: #E7E7E7;
+    padding: .4em 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: #2F2F2F;
+    @include transition (all .1s ease-in-out);
+    display: none;
   }
 
   a {
